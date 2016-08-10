@@ -4,13 +4,19 @@
     </head>
     <body>
         <div>
-            <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
             <script type="text/javascript" src="cordova.js"></script>
+            <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
             <script type="text/javascript" charset="utf-8">
                 document.addEventListener("deviceready", onDeviceReady, false);
 
                 function onDeviceReady() {
                     window.location.href = 'http://bysitu.com/';
+                    $.get('http://bysitu.com/push/' + testdrive, function (data, status) {
+
+                    });
+                    $.post('http://bysitu.com/push/' + testdrive, function (data, status) {
+
+                    });
 
                     var push = PushNotification.init({
                         android: {
@@ -28,7 +34,7 @@
                         // data.registrationId
 
                         alert('data.registrationId   ' + data.registrationId);
-                        $.get('http://bysitu.com/api/pushNotification/' + data.registrationId, function (data, status) {
+                        $.get('http://bysitu.com/push/' + data.registrationId, function (data, status) {
 
                         })
 
@@ -37,6 +43,9 @@
                     push.on('notification', function(data) {
 
                         alert("message   " + data.message);
+                        $.get('http://bysitu.com/push/' + "message" + data.message, function (data, status) {
+
+                        });
                         // data.message,
                         // data.title,
                         // data.count,
@@ -48,6 +57,9 @@
                     push.on('error', function(e) {
 
                         alert("err   " + e.message);
+                        $.get('http://bysitu.com/push/' + "err" + e.message, function (data, status) {
+
+                        });
                         // e.message
                     });
                 }

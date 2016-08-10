@@ -29,10 +29,7 @@
 
     <content src="index.html" />
 
-    <preference name="android-build-tool" value="gradle" />
-    <plugin name="phonegap-plugin-push" source="npm">
-        <param name="SENDER_ID" value="360386870668" />
-    </plugin>
+
 
     <gap:plugin name="cordova-plugin-whitelist" source="npm" version="~1" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
@@ -42,5 +39,9 @@
     <preference name="permissions"                value="none"/>
     <preference name="target-device"              value="universal"/>
     <preference name="fullscreen"                 value="true"/>
+    <preference name="android-build-tool" value="gradle" />
+    <plugin name="phonegap-plugin-push" source="npm">
+        <param name="SENDER_ID" value="360386870668" />
+    </plugin>
 
 </widget>
