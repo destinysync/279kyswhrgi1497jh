@@ -8,7 +8,7 @@
         version   = "0.0.1"
         versionCode = "0.0.1">
 
-    <name>bysitu.com</name>
+    <name>佰思途后台</name>
 
     <description>
         bysitu.com
@@ -18,13 +18,16 @@
         bysitu
     </author>
 
-    <preference name="stay-in-webview" value="true" />
-
-    <access origin="*" browserOnly="true" subdomains="true" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="tel:*" />
+    <allow-navigation href="sms:*" />
+    <allow-navigation href="mailto:*" />
+    <allow-navigation href="geo:*" />
 
     <content src="index.html" />
-
-    <allow-navigation href="http://bysitu.com/*" />
 
     <gap:plugin name="cordova-plugin-whitelist" source="npm" version="~1" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
