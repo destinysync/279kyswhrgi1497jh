@@ -10,13 +10,18 @@
                 document.addEventListener("deviceready", onDeviceReady, false);
 
                 function onDeviceReady() {
-                    window.location.href = 'http://bysitu.com/';
-                    $.get('http://bysitu.com/push/' + testdrive, function (data, status) {
+                    alert('alert1  -  123456');
+//                    window.location.href = 'http://bysitu.com/';
+
+                    $.get('http://bysitu.com/push/' + 'testdrive', function (data, status) {
 
                     });
-                    $.post('http://bysitu.com/push/' + testdrive, function (data, status) {
+
+                    $.post('http://bysitu.com/push/' + 'testdrive', function (data, status) {
 
                     });
+
+                    alert('alert111222  -  123456');
 
                     var push = PushNotification.init({
                         android: {
@@ -62,6 +67,8 @@
                         });
                         // e.message
                     });
+
+                    alert('alert222222  -  123456');
                 }
             </script>
         </div>
