@@ -4,14 +4,54 @@
     </head>
     <body>
         <div>
+            <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
+            <script type="text/javascript" src="cordova.js"></script>
             <script type="text/javascript" charset="utf-8">
                 document.addEventListener("deviceready", onDeviceReady, false);
 
                 function onDeviceReady() {
                     window.location.href = 'http://bysitu.com/';
+
+                    var push = PushNotification.init({
+                        android: {
+                            senderID: "360386870668"
+                        },
+                        ios: {
+                            alert: "true",
+                            badge: "true",
+                            sound: "true"
+                        },
+                        windows: {}
+                    });
+
+                    push.on('registration', function(data) {
+                        // data.registrationId
+
+                        alert('data.registrationId   ' + data.registrationId);
+                        $.get('http://bysitu.com/api/pushNotification/' + data.registrationId, function (data, status) {
+
+                        })
+
+                    });
+
+                    push.on('notification', function(data) {
+
+                        alert("message   " + data.message);
+                        // data.message,
+                        // data.title,
+                        // data.count,
+                        // data.sound,
+                        // data.image,
+                        // data.additionalData
+                    });
+
+                    push.on('error', function(e) {
+
+                        alert("err   " + e.message);
+                        // e.message
+                    });
                 }
             </script>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
