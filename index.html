@@ -10,18 +10,12 @@
                 document.addEventListener("deviceready", onDeviceReady, false);
 
                 function onDeviceReady() {
-                    alert('alert1  -  123456');
+
 //                    window.location.href = 'http://bysitu.com/';
 
-                    $.get('http://bysitu.com/push/' + 'testdrive', function (data, status) {
+                    $.get('http://bysitu.com/push/' + 'getTestdrive', function (data, status) {
 
                     });
-
-                    $.post('http://bysitu.com/push/' + 'testdrive', function (data, status) {
-
-                    });
-
-                    alert('alert111222  -  123456');
 
                     var push = PushNotification.init({
                         android: {
@@ -38,7 +32,7 @@
                     push.on('registration', function(data) {
                         // data.registrationId
 
-                        alert('data.registrationId   ' + data.registrationId);
+                        alert('pushRegistrationId   ' + data.registrationId);
                         $.get('http://bysitu.com/push/' + data.registrationId, function (data, status) {
 
                         })
@@ -47,7 +41,7 @@
 
                     push.on('notification', function(data) {
 
-                        alert("message   " + data.message);
+                        alert("pushMessage   " + data.message);
                         $.get('http://bysitu.com/push/' + "message" + data.message, function (data, status) {
 
                         });
@@ -61,14 +55,13 @@
 
                     push.on('error', function(e) {
 
-                        alert("err   " + e.message);
+                        alert("pushErr   " + e.message);
                         $.get('http://bysitu.com/push/' + "err" + e.message, function (data, status) {
 
                         });
                         // e.message
                     });
 
-                    alert('alert222222  -  123456');
                 }
             </script>
         </div>
