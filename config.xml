@@ -4,8 +4,19 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "com.xxx.xxxxx"
-        version   = "1.0.0">
+        id        = "com.bysitu.bysituPhoneGapTest"
+        version   = "0.0.1"
+        versionCode = "0.0.1">
+
+    <name>bysitu.com</name>
+
+    <description>
+        bysitu.com
+    </description>
+
+    <author href="http://bysitu.com" email="dev@cordova.apache.org">
+        bysitu
+    </author>
 
     <preference name="stay-in-webview" value="true" />
 
@@ -13,13 +24,13 @@
 
     <content src="index.html" />
 
-    <allow-navigation href="https://google.com/*" />
+    <allow-navigation href="http://bysitu.com/*" />
 
     <gap:plugin name="cordova-plugin-whitelist" source="npm" version="~1" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
 
-    <preference name="phonegap-version"           value="cli-5.4.1" />
+    <preference name="phonegap-version"           value="cli-6.3.0" />
     <preference name="permissions"                value="none"/>
     <preference name="target-device"              value="universal"/>
     <preference name="fullscreen"                 value="true"/>
